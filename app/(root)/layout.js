@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <main className=" ">
       <Navbar />
-      <div className="my-4 flex justify-center sm:items-center ">
+      <div className="my-4 flex justify-center sm:items-center">
         <Search />
       </div>
       <div className="">
