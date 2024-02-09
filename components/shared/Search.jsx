@@ -94,7 +94,7 @@ const MyInput = extendVariants(Input, {
     },
     textSize: {
       base: {
-        input: "text-base",
+        input: "text-small",
       },
     },
     removeLabel: {
