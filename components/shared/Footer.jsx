@@ -4,11 +4,19 @@ import { Link, Image } from "@nextui-org/react";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between space-x-4 bg-gray-50 p-16">
-      <div className="flex space-x-4">
-        <span>©HappyFood 2024</span>
-        <Link href="#">Impressum</Link>
-        <Link href="#">Datenschutz</Link>
+    <footer className="flex justify-between space-x-4 bg-gray-50 p-16 align-middle ">
+      <div className="flex space-x-4 align-middle">
+        <span style={{ color: "black" }}>©2024 HappyFood</span>
+        <div>
+          <Link style={{ color: "black" }} href="#">
+            Impressum
+          </Link>
+        </div>
+        <div>
+          <Link style={{ color: "black" }} href="#">
+            Datenschutz
+          </Link>
+        </div>
       </div>
       <div className="flex space-x-4">
         <Link href="http://www.facebook.com">
