@@ -5,7 +5,7 @@ import Filter from "@/components/shared/Filter";
 
 const Layout = ({ children }) => {
   return (
-    <main className=" ">
+    <main className="roboto">
       <Navbar />
       <div className="my-4 flex justify-center ">
         <Search />
