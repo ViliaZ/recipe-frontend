@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/shared/Navbar";
 import Search from "@/components/shared/Search";
 import Filter from "@/components/shared/Filter";
+import Footer from "@/components/shared/Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -21,6 +22,7 @@ const Layout = ({ children }) => {
           <div className="">{children}</div>
         </section>
       </div>
+      <Footer />
     </main>
   );
 };
