@@ -10,7 +10,7 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 
-export default function CardRecipe() {
+export default function CardRecipe({ recipes }) {
   return (
     <Link href="recipe/1">
       <Card shadow="sm" className="max-w-[250px] rounded-b-none">
