@@ -15,5 +15,5 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.ignoreWords": ["nextui"]
+  "cSpell.ignoreWords": ["Kreis", "Kreuz", "herz", "kreuzkreis", "nextui"]
 }
