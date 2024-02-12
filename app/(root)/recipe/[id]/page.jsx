@@ -132,85 +132,90 @@
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import TimerIcon from "../../../../public/assets/icons/uhr.svg";
+import { getOneRecipe } from "@/lib/actions/recipe.action";
 
-// TODO: Refactor this function to a utils.js file later
-// This function replaces line breaks in JSON with <br> tags for rendering in HTML:
-// Define a function that takes an object as an argument
-function replaceNewlinesInObject(obj) {
-  // Create a new object or array based on the input type
-  const newObj = Array.isArray(obj) ? [] : {};
-  // Iterate over each property in the input object
-  for (const key in obj) {
-    // If the property value is a string
-    if (typeof obj[key] === "string") {
-      // Replace newline characters with HTML line breaks in the string and assign it to the new object
-      newObj[key] = obj[key].replace(/\\n/g, "<br/>");
-    }
-    // If the property value is an array
-    else if (Array.isArray(obj[key])) {
-      // Apply the function recursively to each item in the array and assign the result to the new object
-      newObj[key] = obj[key].map((item) => replaceNewlinesInObject(item));
-    }
-    // If the property value is an object
-    else if (typeof obj[key] === "object") {
-      // Apply the function recursively to the object and assign the result to the new object
-      newObj[key] = replaceNewlinesInObject(obj[key]);
-    }
-    // If the property value is neither a string, an array, nor an object
-    else {
-      // Assign the property value directly to the new object
-      newObj[key] = obj[key];
-    }
-  }
-  // Return the new object with newline characters replaced
-  return newObj;
-}
+// // TODO: Refactor this function to a utils.js file later
+// // This function replaces line breaks in JSON with <br> tags for rendering in HTML:
+// // Define a function that takes an object as an argument
+// function replaceNewlinesInObject(obj) {
+//   // Create a new object or array based on the input type
+//   const newObj = Array.isArray(obj) ? [] : {};
+//   // Iterate over each property in the input object
+//   for (const key in obj) {
+//     // If the property value is a string
+//     if (typeof obj[key] === "string") {
+//       // Replace newline characters with HTML line breaks in the string and assign it to the new object
+//       newObj[key] = obj[key].replace(/\\n/g, "<br/>");
+//     }
+//     // If the property value is an array
+//     else if (Array.isArray(obj[key])) {
+//       // Apply the function recursively to each item in the array and assign the result to the new object
+//       newObj[key] = obj[key].map((item) => replaceNewlinesInObject(item));
+//     }
+//     // If the property value is an object
+//     else if (typeof obj[key] === "object") {
+//       // Apply the function recursively to the object and assign the result to the new object
+//       newObj[key] = replaceNewlinesInObject(obj[key]);
+//     }
+//     // If the property value is neither a string, an array, nor an object
+//     else {
+//       // Assign the property value directly to the new object
+//       newObj[key] = obj[key];
+//     }
+//   }
+//   // Return the new object with newline characters replaced
+//   return newObj;
+// }
 
-let recipe = {
-  id: 1,
-  name: "Spaghetti Bolognese",
-  description:
-    "A classic Italian dish:\\n Indulge in the classic comfort of Spaghetti Bolognese, a hearty Italian dish that combines perfectly cooked spaghetti with a rich and savory meat sauce. Begin by sautéing a medley of aromatic vegetables like onions, carrots, and celery, before adding in minced garlic for an extra burst of flavor. Brown ground beef in the mix, and then introduce a symphony of tomato-based goodness with crushed tomatoes, tomato paste, and a splash of broth (or red wine for an extra layer of richness.",
-  steps: [
-    {
-      text: "Prepare Ingredients:\\n Finely chop the onion, carrot, and celery. Mince the garlic. Measure out the tomato paste, crushed tomatoes, broth, and red wine (if using). Have the ground beef ready.",
-    },
-    {
-      text: "Cooking the Vegetables:\\n Heat a large skillet or pot over medium heat with a few tablespoons of olive oil. Add the chopped onion, carrot, and celery. Cook until the vegetables are softened, usually 5-7 minutes. Add minced garlic and cook for an additional 1-2 minutes until fragrant.",
-    },
-    {
-      text: "Tomato Base:\\n Stir in the tomato paste and cook for 2-3 minutes to enhance the flavor. Pour in the crushed tomatoes, broth, and red wine (if using). Season with dried oregano, dried basil, salt, and pepper. Bring the mixture to a simmer, then reduce the heat and let it simmer for at least 30 minutes to allow the flavors to meld. You can simmer longer for a richer flavor.",
-    },
-  ],
-  imageUrl: "/assets/images/01_Spaghetti_Bolognese.jpg",
-  cookingTime: 60,
-  category: "pasta",
-  region: "italian",
-  userId: 1,
-  ingredients: [
-    {
-      name: "Spaghetti",
-      unit: "gr",
-      amount: 200.0,
-    },
-    {
-      name: "Tomato Sauce",
-      unit: "gr",
-      amount: 150.0,
-    },
-    {
-      name: "Ground Beef",
-      unit: "gr",
-      amount: 100.0,
-    },
-  ],
-};
+// let recipe = {
+//   id: 1,
+//   name: "Spaghetti Bolognese",
+//   description:
+//     "A classic Italian dish:\\n Indulge in the classic comfort of Spaghetti Bolognese, a hearty Italian dish that combines perfectly cooked spaghetti with a rich and savory meat sauce. Begin by sautéing a medley of aromatic vegetables like onions, carrots, and celery, before adding in minced garlic for an extra burst of flavor. Brown ground beef in the mix, and then introduce a symphony of tomato-based goodness with crushed tomatoes, tomato paste, and a splash of broth (or red wine for an extra layer of richness.",
+//   steps: [
+//     {
+//       text: "Prepare Ingredients:\\n Finely chop the onion, carrot, and celery. Mince the garlic. Measure out the tomato paste, crushed tomatoes, broth, and red wine (if using). Have the ground beef ready.",
+//     },
+//     {
+//       text: "Cooking the Vegetables:\\n Heat a large skillet or pot over medium heat with a few tablespoons of olive oil. Add the chopped onion, carrot, and celery. Cook until the vegetables are softened, usually 5-7 minutes. Add minced garlic and cook for an additional 1-2 minutes until fragrant.",
+//     },
+//     {
+//       text: "Tomato Base:\\n Stir in the tomato paste and cook for 2-3 minutes to enhance the flavor. Pour in the crushed tomatoes, broth, and red wine (if using). Season with dried oregano, dried basil, salt, and pepper. Bring the mixture to a simmer, then reduce the heat and let it simmer for at least 30 minutes to allow the flavors to meld. You can simmer longer for a richer flavor.",
+//     },
+//   ],
+//   imageUrl: "/assets/images/01_Spaghetti_Bolognese.jpg",
+//   cookingTime: 60,
+//   category: "pasta",
+//   region: "italian",
+//   userId: 1,
+//   ingredients: [
+//     {
+//       name: "Spaghetti",
+//       unit: "gr",
+//       amount: 200.0,
+//     },
+//     {
+//       name: "Tomato Sauce",
+//       unit: "gr",
+//       amount: 150.0,
+//     },
+//     {
+//       name: "Ground Beef",
+//       unit: "gr",
+//       amount: 100.0,
+//     },
+//   ],
+// };
 
-recipe = replaceNewlinesInObject(recipe);
+// recipe = replaceNewlinesInObject(recipe);
 
-const Recipe = ({ params }) => {
+const Recipe = async ({ params }) => {
   // console.log('[Detail  Page] params: ', params);
-  //   const id = params.id;
+  const id = params.id;
+
+  const recipe = await getOneRecipe(id);
+
+  //   console.log("[Detail Page] recipe:", recipe);
   return (
     <div className="mx-auto mt-10 flex w-[80%] flex-col items-center justify-center bg-white px-16">
       {/* <h1>Recipe {id}</h1> */}

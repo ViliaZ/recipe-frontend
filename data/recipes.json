@@ -1,0 +1,294 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Spaghetti Bolognese",
+      "description": "A classic Italian dish: Indulge in the classic comfort of Spaghetti Bolognese, a hearty Italian dish that combines perfectly cooked spaghetti with a rich and savory meat sauce. Begin by sautéing a medley of aromatic vegetables like onions, carrots, and celery, before adding in minced garlic for an extra burst of flavor. Brown ground beef in the mix, and then introduce a symphony of tomato-based goodness with crushed tomatoes, tomato paste, and a splash of broth (or red wine for an extra layer of richness.",
+      "steps": [
+        {
+          "text": "Prepare Ingredients: Finely chop the onion, carrot, and celery. Mince the garlic. Measure out the tomato paste, crushed tomatoes, broth, and red wine (if using). Have the ground beef ready."
+        },
+        {
+          "text": "Cooking the Vegetables: Heat a large skillet or pot over medium heat with a few tablespoons of olive oil. Add the chopped onion, carrot, and celery. Cook until the vegetables are softened, usually 5-7 minutes. Add minced garlic and cook for an additional 1-2 minutes until fragrant."
+        },
+        {
+          "text": "Tomato Base: Stir in the tomato paste and cook for 2-3 minutes to enhance the flavor. Pour in the crushed tomatoes, broth, and red wine (if using). Season with dried oregano, dried basil, salt, and pepper. Bring the mixture to a simmer, then reduce the heat and let it simmer for at least 30 minutes to allow the flavors to meld. You can simmer longer for a richer flavor."
+        }
+      ],
+      "imageUrl": "/assets/images/01_Spaghetti_Bolognese.jpg",
+      "cookingTime": 60,
+      "category": "pasta",
+      "region": "italian",
+      "userId": 1,
+      "ingredients": [
+        {
+          "name": "Spaghetti",
+          "unit": "gr",
+          "amount": 200.0
+        },
+        {
+          "name": "Tomato Sauce",
+          "unit": "gr",
+          "amount": 150.0
+        },
+        {
+          "name": "Ground Beef",
+          "unit": "gr",
+          "amount": 100.0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pizza Margherita",
+      "description": "A classic Italian pizza with tomatoes, mozzarella, and basil. Enjoy the simplicity of a Pizza Margherita, where the freshness of tomatoes, the creaminess of mozzarella, and the aromatic touch of basil come together to create a delightful culinary experience.",
+      "steps": [
+        {
+          "text": "Prepare pizza dough:\n Begin by preparing the pizza dough according to your favorite recipe or using a pre-made dough. Ensure that it's rolled out to your desired thickness on a floured surface."
+        },
+        {
+          "text": "Spread tomato sauce on the dough:\n Evenly spread the tomato sauce over the prepared pizza dough, leaving a small border around the edges for the crust."
+        },
+        {
+          "text": "Add mozzarella slices:\n Arrange slices of mozzarella evenly on top of the tomato sauce, covering the entire surface of the pizza."
+        },
+        {
+          "text": "Bake in the oven:\n Preheat your oven to the recommended temperature for pizza baking. Transfer the assembled pizza onto a preheated pizza stone or baking sheet and bake until the crust is golden and the cheese is melted and bubbly."
+        },
+        {
+          "text": "Top with fresh basil before serving:\n Once out of the oven, sprinkle fresh basil leaves over the hot, melty cheese. This adds a burst of aromatic freshness to your Pizza Margherita."
+        }
+      ],
+      "imageUrl": "/assets/images/02_Pizza_Margherita.jpg",
+      "cookingTime": 40,
+      "category": "pizza",
+      "region": "italian",
+      "userId": 1,
+      "ingredients": [
+        {
+          "name": "Pizza Dough",
+          "unit": "grams",
+          "amount": 300.0
+        },
+        {
+          "name": "Tomato Sauce",
+          "unit": "grams",
+          "amount": 200.0
+        },
+        {
+          "name": "Mozzarella",
+          "unit": "grams",
+          "amount": 150.0
+        },
+        {
+          "name": "Fresh Basil",
+          "unit": "grams",
+          "amount": 10.0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Chicken Teriyaki",
+      "description": "Indulge in the savory and sweet flavors of a classic Japanese chicken dish, Chicken Teriyaki. This dish combines tender chicken breast marinated in teriyaki sauce, grilled or pan-fried to perfection, and served with steamed rice and a side of mixed vegetables.",
+      "steps": [
+        {
+          "text": "Marinate chicken in teriyaki sauce:\n Begin by marinating the chicken breast in teriyaki sauce. Ensure that the chicken is well-coated and let it marinate for at least 15-20 minutes to absorb the delicious flavors."
+        },
+        {
+          "text": "Grill or pan-fry chicken until cooked:\n Heat a grill or pan over medium-high heat. Grill or pan-fry the marinated chicken breast until fully cooked, achieving a golden brown exterior and juicy interior."
+        },
+        {
+          "text": "Serve with steamed rice and vegetables:\n Plate the cooked chicken alongside a generous portion of steamed rice and mixed vegetables. Drizzle any remaining teriyaki sauce over the dish for an extra burst of flavor."
+        }
+      ],
+      "imageUrl": "/assets/images/03_Teriyaki_Chicken.jpg",
+      "cookingTime": 25,
+      "category": "main dish",
+      "region": "asian",
+      "userId": 1,
+      "ingredients": [
+        {
+          "name": "Chicken Breast",
+          "unit": "grams",
+          "amount": 400.0
+        },
+        {
+          "name": "Teriyaki Sauce",
+          "unit": "milliliters",
+          "amount": 100.0
+        },
+        {
+          "name": "Cooked Rice",
+          "unit": "grams",
+          "amount": 200.0
+        },
+        {
+          "name": "Mixed Vegetables",
+          "unit": "grams",
+          "amount": 150.0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Vegetable Stir-Fry",
+      "description": "Experience the vibrant flavors of a quick and healthy Chinese-inspired Vegetable Stir-Fry. This colorful dish features a medley of bite-sized vegetables stir-fried to perfection in a wok with a delightful combination of soy sauce and fresh ginger. Serve it hot, either with rice or noodles, for a satisfying and nutritious meal.",
+      "steps": [
+        {
+          "text": "Chop vegetables into bite-sized pieces:\n Prepare the broccoli, carrots, and bell peppers by chopping them into bite-sized pieces. This ensures quick and even cooking in the stir-fry."
+        },
+        {
+          "text": "Stir-fry vegetables in a wok with soy sauce and ginger:\n Heat a wok over high heat. Add the chopped vegetables, soy sauce, and fresh ginger. Stir-fry the vegetables until they are tender-crisp and infused with the savory and aromatic flavors of soy sauce and ginger."
+        },
+        {
+          "text": "Serve hot with rice or noodles:\n Once the vegetables are cooked to your liking, transfer the stir-fry to a serving dish. Serve it hot, either over a bed of steamed rice or with your favorite noodles."
+        }
+      ],
+      "imageUrl": "/assets/images/04_Vegetable_Stir_Fry.jpg",
+      "cookingTime": 20,
+      "category": "vegetarian",
+      "region": "asian",
+      "userId": 1,
+      "ingredients": [
+        {
+          "name": "Broccoli",
+          "unit": "grams",
+          "amount": 150.0
+        },
+        {
+          "name": "Carrots",
+          "unit": "grams",
+          "amount": 100.0
+        },
+        {
+          "name": "Bell Peppers",
+          "unit": "grams",
+          "amount": 100.0
+        },
+        {
+          "name": "Soy Sauce",
+          "unit": "milliliters",
+          "amount": 50.0
+        },
+        {
+          "name": "Fresh Ginger",
+          "unit": "grams",
+          "amount": 10.0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Quinoa Salad",
+      "description": "Indulge in the refreshing and protein-packed goodness of this vegetarian Quinoa Salad. This vibrant salad brings together cooked quinoa with a medley of chopped vegetables and herbs, drizzled with a delightful olive oil and lemon dressing. Chill before serving for the perfect combination of flavors and textures.",
+      "steps": [
+        {
+          "text": "Cook quinoa according to package instructions:\n Begin by cooking the quinoa according to the package instructions. Ensure that it's cooked to perfection, with each grain being light and fluffy."
+        },
+        {
+          "text": "Mix quinoa with chopped vegetables and herbs:\n In a large bowl, combine the cooked quinoa with chopped cherry tomatoes, cucumber, feta cheese, and fresh basil. Toss the ingredients together for an even distribution of flavors and textures."
+        },
+        {
+          "text": "Drizzle with olive oil and lemon dressing:\n Prepare a dressing by combining olive oil and lemon juice. Drizzle the dressing over the quinoa and vegetable mixture, ensuring every bite is infused with the vibrant flavors of the dressing."
+        },
+        {
+          "text": "Chill before serving:\n Refrigerate the Quinoa Salad for a short period to allow the flavors to meld and intensify. Serve chilled for a refreshing and satisfying experience."
+        }
+      ],
+      "imageUrl": "/assets/images/05_Quinoa_Salad.jpg",
+      "cookingTime": 25,
+      "category": "salad",
+      "region": "african",
+      "userId": 1,
+      "ingredients": [
+        {
+          "name": "Quinoa",
+          "unit": "grams",
+          "amount": 200.0
+        },
+        {
+          "name": "Cherry Tomatoes",
+          "unit": "grams",
+          "amount": 150.0
+        },
+        {
+          "name": "Cucumber",
+          "unit": "grams",
+          "amount": 100.0
+        },
+        {
+          "name": "Feta Cheese",
+          "unit": "grams",
+          "amount": 50.0
+        },
+        {
+          "name": "Fresh Basil",
+          "unit": "grams",
+          "amount": 10.0
+        },
+        {
+          "name": "Olive Oil",
+          "unit": "milliliters",
+          "amount": 30.0
+        },
+        {
+          "name": "Lemon Juice",
+          "unit": "milliliters",
+          "amount": 20.0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Spinach and Ricotta Stuffed Shells",
+      "description": "Savor the flavors of these delicious vegetarian pasta shells filled with a delightful combination of spinach and ricotta cheese. Each bite offers a perfect blend of textures and savory goodness.",
+      "steps": [
+        {
+          "text": "Cook jumbo pasta shells:\n Begin by cooking the jumbo pasta shells according to the package instructions. Ensure they are al dente, as they will continue cooking in the oven."
+        },
+        {
+          "text": "Mix ricotta cheese with sautéed spinach and seasonings:\n In a pan, sauté fresh spinach until wilted. In a bowl, mix the sautéed spinach with ricotta cheese, garlic powder, and any desired seasonings. Ensure a well-combined and flavorful filling."
+        },
+        {
+          "text": "Fill pasta shells with the mixture:\n Carefully stuff each cooked pasta shell with the spinach and ricotta mixture. Place them in a baking dish, arranging them snugly to prevent unraveling during baking."
+        },
+        {
+          "text": "Bake in the oven until bubbly:\n Top the filled shells with mozzarella cheese and bake in the oven until the cheese is melted and bubbly, and the pasta shells are heated through. This ensures a golden and delicious finish to your stuffed shells."
+        }
+      ],
+      "imageUrl": "/assets/images/Spinach_and_Ricotta_stuffed_Shells.jpeg",
+      "cookingTime": 45,
+      "category": "pasta",
+      "region": "italian",
+      "userId": 1,
+      "ingredients": [
+        {
+          "name": "Jumbo Pasta Shells",
+          "unit": "pieces",
+          "amount": 200.0
+        },
+        {
+          "name": "Ricotta Cheese",
+          "unit": "grams",
+          "amount": 250.0
+        },
+        {
+          "name": "Fresh Spinach",
+          "unit": "grams",
+          "amount": 150.0
+        },
+        {
+          "name": "Garlic Powder",
+          "unit": "teaspoons",
+          "amount": 2.0
+        },
+        {
+          "name": "Mozzarella Cheese",
+          "unit": "grams",
+          "amount": 100.0
+        }
+      ]
+    }
+  ]
+}
