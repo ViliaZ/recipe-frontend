@@ -3,6 +3,7 @@ import Navbar from "../../components/shared/Navbar";
 import Search from "@/components/shared/Search";
 import Filter from "@/components/shared/Filter";
 import Footer from "@/components/shared/Footer";
+import Breadcrumb from "@/components/shared/Breadcrumbs";
 
 const Layout = ({ children }) => {
   return (
@@ -16,6 +17,16 @@ const Layout = ({ children }) => {
           Explore Recipes
         </h1>
         <Filter />
+      </div>
+      <div className="mx-6 mt-6 flex items-center">
+        <Breadcrumb
+          homeElement={"Home"}
+          separator={<span className="text-[12px] font-light"> {">"} </span>}
+          activeClasses="text-[12px] font-semibold text-neutal-500"
+          containerClasses="flex gap-1 items-center"
+          listClasses="hover:underline text-[12px] font-light text-neutal-100"
+          capitalizeLinks
+        />
       </div>
       <div className="">
         <section className="">
