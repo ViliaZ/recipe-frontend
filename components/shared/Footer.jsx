@@ -8,18 +8,18 @@ export default function Footer() {
       <div className="flex space-x-4 align-middle">
         <span style={{ color: "black" }}>©2024 HappyFood</span>
         <div>
-          <Link style={{ color: "black" }} href="#">
+          <Link style={{ color: "black" }} href="#" target="blank">
             Impressum
           </Link>
         </div>
         <div>
-          <Link style={{ color: "black" }} href="#">
+          <Link style={{ color: "black" }} href="#" target="blank">
             Datenschutz
           </Link>
         </div>
       </div>
       <div className="flex space-x-4">
-        <Link href="http://www.facebook.com">
+        <Link href="http://www.facebook.com" target="blank">
           <Image
             width={28}
             height={28}
@@ -29,7 +29,7 @@ export default function Footer() {
           />
         </Link>
 
-        <Link href="http://www.instagram.com">
+        <Link href="http://www.instagram.com" target="blank">
           <Image
             width={28}
             height={28}
