@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import {
+  Image,
   Navbar,
   NavbarBrand,
   NavbarMenuToggle,
@@ -8,9 +9,12 @@ import {
   NavbarMenu,
   NavbarContent,
   NavbarItem,
+  DropdownMenu,
+  DropdownItem,
+  Dropdown,
+  DropdownTrigger,
   Link,
   Button,
-  Input,
 } from "@nextui-org/react";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 
@@ -35,9 +39,12 @@ export default function App() {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="mx-auto max-w-screen-xl"
+      className=" bg-gray-50"
     >
-      <NavbarContent className="sm:hidden" justify="start">
+      <NavbarContent
+        className="mx-auto max-w-screen-xl sm:hidden"
+        justify="start"
+      >
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
@@ -45,42 +52,63 @@ export default function App() {
 
       <NavbarContent className="pr-3 sm:hidden" justify="center">
         <NavbarBrand>
-          {/* <AcmeLogo /> */}
-          <p className="font-bold text-inherit">ACME</p>
+          <Image width={30} height={30} src="/assets/images/Logo.png" alt="" />
+          <Image
+            style={{ maxHeight: "34px" }}
+            src="/assets/images/Logo_Typo.png"
+            alt=""
+          />
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
-        <NavbarBrand>
-          {/* <AcmeLogo /> */}
-          <p className="font-bold text-inherit">ACME</p>
+      <NavbarContent className="hidden gap-4 sm:flex">
+        <NavbarBrand justify="start">
+          <Image width={30} height={30} src="/assets/images/Logo.png" alt="" />
+          <Image
+            style={{ maxHeight: "34px" }}
+            src="/assets/images/Logo_Typo.png"
+            alt=""
+          />
         </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent justify="end">
         <NavbarItem>
           <Link color="foreground" href="#">
-            Features
+            About
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
           <Link href="#" aria-current="page">
-            Customers
+            Community
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
+        <NavbarItem className="ml-8">
+          <Button as={Link} href="#" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
+
+        <Dropdown placement="bottom-end">
+          <DropdownTrigger>
+            <Image
+              width={38}
+              height={38}
+              alt=""
+              src="/assets/icons/useravatar.png"
+            />
+          </DropdownTrigger>
+          <DropdownMenu aria-label="Profile Actions" variant="flat">
+            <DropdownItem key="profile" className="h-14 gap-2">
+              <p className="font-semibold">Signed in as</p>
+              <p className="font-semibold">happyUser@email.com</p>
+            </DropdownItem>
+            <DropdownItem key="settings">My Settings</DropdownItem>
+            <DropdownItem key="logout" color="danger">
+              Log Out
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
       </NavbarContent>
 
       <NavbarMenu>
