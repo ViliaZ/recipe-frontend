@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Card, CardHeader, CardBody, Link } from "@nextui-org/react";
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CardRecipe({ recipe }) {
   return (
