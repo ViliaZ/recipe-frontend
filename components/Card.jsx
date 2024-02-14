@@ -1,13 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Link,
-  // Image,
-} from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Link } from "@nextui-org/react";
 import Image from "next/image";
 
 export default function CardRecipe({ recipe }) {
@@ -20,8 +14,6 @@ export default function CardRecipe({ recipe }) {
           >
             <Image
               alt={recipe.name}
-              // width={300}
-              // height={40}
               layout="fill"
               src={recipe.imageUrl}
               className="rounded-none"
@@ -30,7 +22,9 @@ export default function CardRecipe({ recipe }) {
         </CardHeader>
         <CardBody>
           <div className="flex flex-wrap">
-            <h1 className="text-medium font-bold">{recipe.name}</h1>
+            <h1 className="line-clamp-1 text-medium font-bold">
+              {recipe.name}
+            </h1>
           </div>
         </CardBody>
         <CardBody className="flex flex-wrap">
