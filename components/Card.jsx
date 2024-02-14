@@ -10,39 +10,45 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 
-export default function CardRecipe({ recipes }) {
+export default function CardRecipe({ recipe }) {
   return (
-    <Link href="recipe/1">
+    <Link href={"/recipe/" + recipe.id}>
       <Card shadow="sm" className="max-w-[250px] rounded-b-none">
         <CardHeader className="flex p-0">
           <div>
             <Image
-              alt="Spaghetti Bolognese"
-              width={300}
-              height={40}
-              src="/assets/images/01_Spaghetti_Bolognese.jpg"
+              alt={recipe.name}
+              // width={300}
+              // height={40}
+              fill
+              objectFit="CardHeader"
+              src={recipe.imageUrl}
               className="rounded-none"
             />
           </div>
         </CardHeader>
         <CardBody>
           <div className="flex flex-wrap">
-            <h1 className="text-md font-bold">Spaghetti Bolognese</h1>
+            <h1 className="text-medium font-bold">{recipe.name}</h1>
           </div>
         </CardBody>
         <CardBody className="flex flex-wrap">
-          <p className="line-clamp-3 text-[14px] leading-tight text-neutral-500">
-            A classic Italian Dish:
+          <p
+            className="my-0 line-clamp-3 py-0 text-[14px] leading-tight text-neutral-500"
+            style={{ marginTop: -15 + "px" }}
+          >
+            {recipe.description}
             <br />
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt.
+            {}
           </p>
         </CardBody>
-        <CardBody className="flex flex-row">
+        <CardBody className="my-0 flex flex-row py-0">
           <Image src="/assets/icons/uhr.svg" alt="Uhr" width={20} height={20} />
-          <div className="ml-2 flex w-40 font-bold">60 min</div>
+          <div className="ml-2 flex w-40 font-bold">
+            {recipe.cookingTime} min
+          </div>
         </CardBody>
-        <CardBody className="flex flex-row justify-between">
+        <CardBody className="my-3 flex flex-row justify-between py-0">
           <div className="flex min-w-20 items-center justify-around rounded-full border-1 border-solid border-black px-1 py-0.5">
             <Image
               src="/assets/icons/herz.svg"
