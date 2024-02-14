@@ -15,13 +15,14 @@ export default function CardRecipe({ recipe }) {
     <Link href={"/recipe/" + recipe.id}>
       <Card shadow="sm" className="max-w-[250px] rounded-b-none">
         <CardHeader className="flex p-0">
-          <div>
+          <div
+            style={{ width: "300px", height: "144px", position: "relative" }}
+          >
             <Image
               alt={recipe.name}
               // width={300}
               // height={40}
-              fill
-              objectFit="CardHeader"
+              layout="fill"
               src={recipe.imageUrl}
               className="rounded-none"
             />
