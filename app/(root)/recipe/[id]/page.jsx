@@ -142,18 +142,20 @@ const Recipe = async ({ params }) => {
 
   //   console.log("[Detail Page] recipe:", recipe);
   return (
-    <div className="mx-auto mt-10 flex w-[80%] flex-col items-center justify-center bg-white px-16">
+    <div className="w-full flex-col items-center justify-center bg-white 320:px-6 md:px-10 lg:px-14">
       {/* <h1>Recipe {id}</h1> */}
-      <Image
-        src={recipe.imageUrl}
-        alt="Food Image"
-        width={1000}
-        height={750}
-        className="mb-6 rounded-2xl"
-      />
+      <div className="mt-6">
+        <Image
+          src={recipe.imageUrl}
+          alt="Food Image"
+          width={1000}
+          height={750}
+          className="mb-6 w-full rounded-2xl"
+        />
+      </div>
 
       <div className="mb-6 flex w-full justify-center gap-2">
-        <div className="flex flex-1 justify-end ">
+        <div className="flex justify-end md:flex-1 ">
           <Button
             size="sm"
             variant="ghost"
@@ -163,7 +165,7 @@ const Recipe = async ({ params }) => {
             Share
           </Button>
         </div>
-        <div className="flex flex-1 ">
+        <div className="flex md:flex-1 ">
           <Button
             size="sm"
             variant="ghost"

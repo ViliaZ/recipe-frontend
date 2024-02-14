@@ -28,13 +28,10 @@ export default function App() {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="h-24 text-black"
+      className="h-24 text-black md:px-4"
     >
       {/* Hamburger Menu */}
-      <NavbarContent
-        className="mx-auto max-w-screen-xl sm:hidden"
-        justify="start"
-      >
+      <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
