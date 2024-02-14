@@ -21,26 +21,16 @@ import {
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+  const menuItems = ["Profile", "Deployments", "My Settings", "Log Out"];
 
   return (
     <Navbar
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className=" bg-gray-50"
+      className="h-24 text-black"
     >
+      {/* Hamburger Menu */}
       <NavbarContent
         className="mx-auto max-w-screen-xl sm:hidden"
         justify="start"
@@ -50,22 +40,24 @@ export default function App() {
         />
       </NavbarContent>
 
+      {/* mobile */}
       <NavbarContent className="pr-3 sm:hidden" justify="center">
         <NavbarBrand>
           <Image width={30} height={30} src="/assets/images/Logo.png" alt="" />
           <Image
-            style={{ maxHeight: "34px" }}
+            className="h-8 min-h-8"
             src="/assets/images/Logo_Typo.png"
             alt=""
           />
         </NavbarBrand>
       </NavbarContent>
 
+      {/* desktop */}
       <NavbarContent className="hidden gap-4 sm:flex">
         <NavbarBrand justify="start">
           <Image width={30} height={30} src="/assets/images/Logo.png" alt="" />
           <Image
-            style={{ maxHeight: "34px" }}
+            style={{ maxHeight: "30px" }}
             src="/assets/images/Logo_Typo.png"
             alt=""
           />
@@ -73,31 +65,28 @@ export default function App() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem>
+        <NavbarItem className="hidden sm:flex">
           <Link color="foreground" href="#">
             About
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+        <NavbarItem className="mr-8 hidden sm:flex">
+          <Link color="foreground" href="#" aria-current="page">
             Community
           </Link>
         </NavbarItem>
-        <NavbarItem className="ml-8">
-          <Button as={Link} href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
 
-        <Dropdown placement="bottom-end">
+        <Dropdown placement="bottom-end" className="text-black">
           <DropdownTrigger>
             <Image
               width={38}
               height={38}
+              className="min-w-8"
               alt=""
-              src="/assets/icons/useravatar.png"
+              src="/assets/images/useravatar.png"
             />
           </DropdownTrigger>
+
           <DropdownMenu aria-label="Profile Actions" variant="flat">
             <DropdownItem key="profile" className="h-14 gap-2">
               <p className="font-semibold">Signed in as</p>
@@ -105,10 +94,15 @@ export default function App() {
             </DropdownItem>
             <DropdownItem key="settings">My Settings</DropdownItem>
             <DropdownItem key="logout" color="danger">
-              Log Out
+              Logout
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        <NavbarItem className="hidden sm:flex">
+          <Button as={Link} href="#" variant="flat">
+            Logout
+          </Button>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
