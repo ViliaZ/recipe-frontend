@@ -143,8 +143,7 @@ const Recipe = async ({ params }) => {
   //   console.log("[Detail Page] recipe:", recipe);
   return (
     <div className="w-full flex-col items-center justify-center bg-white 320:px-6 md:px-10 lg:px-14">
-      {/* <h1>Recipe {id}</h1> */}
-      <div className="mt-6">
+      <div className="mt-6 ">
         <Image
           src={recipe.imageUrl}
           alt="Food Image"

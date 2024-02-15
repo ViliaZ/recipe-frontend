@@ -28,7 +28,7 @@ export default function App() {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="h-24 text-black md:px-4"
+      className="h-24 bg-white text-black md:px-4"
     >
       {/* Hamburger Menu */}
       <NavbarContent className="sm:hidden" justify="start">
