@@ -15,9 +15,10 @@ export default function CardRecipe({ recipe }) {
           >
             <Image
               alt={recipe.name}
-              layout="fill"
+              fill
+              style={{ objectFit: "cover" }}
               src={recipe.imageUrl}
-              className="rounded-none"
+              className="rounded-none hover:opacity-60"
             />
           </div>
         </CardHeader>
