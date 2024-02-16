@@ -1,24 +1,3 @@
-// /* eslint-disable no-lone-blocks */
-// import CardRecipe from "@/components/Card";
-// import React from "react";
-// import { getAllRecipes } from "@/lib/actions/recipe.action";
-
-// async function HomePage() {
-//   const rec = await getAllRecipes();
-
-//   return (
-//     <div className="mt-10 flex justify-center">
-//       <div className="xs:grid-cols-2 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
-//         {rec.map((recipe) => (
-//           <CardRecipe key={recipe.id} recipe={recipe} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default HomePage;
-
 "use client";
 import CardRecipe from "@/components/Card";
 import React, { useContext, useEffect, useState } from "react";
@@ -26,19 +5,26 @@ import { getAllRecipes } from "@/lib/actions/recipe.action";
 import { RecipeContext } from "@/context/RecipeContext";
 
 function HomePage() {
+  // useContext is a hook that allows you to use context without wrapping a component in a Context.Consumer
+  // Here, we're getting the selectedCategory and searchTerm from the RecipeContext
   const { selectedCategory, searchTerm } = useContext(RecipeContext);
+
+  // useState is a hook that lets you add React state to function components
+  // Here we're creating a state variable called recipes. setRecipes is the function to update the state.
   const [recipes, setRecipes] = useState([]);
 
-  //   console.log("[Homepage] selectedCategory:", selectedCategory);
-
   useEffect(() => {
+    // useEffect is a hook that allows you to perform side effects in function components
+    // Here, we're defining a function fetchRecipes to fetch all recipes based on the selectedCategory and searchTerm
     const fetchRecipes = async () => {
       const rec = await getAllRecipes(selectedCategory, searchTerm);
+      // Once the recipes are fetched, we update the recipes state using setRecipes
       setRecipes(rec);
     };
 
+    // Call the fetchRecipes function
     fetchRecipes();
-  }, [selectedCategory, searchTerm]);
+  }, [selectedCategory, searchTerm]); // This effect will run every time selectedCategory or searchTerm changes
 
   return (
     <div className="mt-10 flex justify-center">
