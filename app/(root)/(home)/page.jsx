@@ -5,17 +5,16 @@ import { getAllRecipes } from "@/lib/actions/recipe.action";
 
 async function HomePage() {
   const rec = await getAllRecipes();
-  {
-    return (
-      <div className="mt-10 flex justify-center">
-        <div className="xs:grid-cols-2 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {rec.map((recipe) => (
-            <CardRecipe key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
+
+  return (
+    <div className="mt-10 flex justify-center">
+      <div className="xs:grid-cols-2 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        {rec.map((recipe) => (
+          <CardRecipe key={recipe.id} recipe={recipe} />
+        ))}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default HomePage;
