@@ -1,5 +1,5 @@
 export const Filters = [
   { name: "All", value: "all" },
-  { name: "Favorites", value: "favorites" },
+  { name: "Pasta", value: "pasta" },
   { name: "Vegetarian", value: "vegetarian" },
 ];
