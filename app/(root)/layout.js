@@ -52,7 +52,7 @@ import Footer from "@/components/shared/Footer";
 import Breadcrumb from "@/components/shared/Breadcrumbs";
 
 const Layout = ({ children }) => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <RecipeContext.Provider
