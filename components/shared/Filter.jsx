@@ -73,6 +73,8 @@ const Filter = () => {
   const handleClick = (value) => {
     setActiveButton(value);
     setSelectedCategory(value);
+
+    console.log(value);
   };
 
   return (
