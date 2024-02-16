@@ -29,7 +29,7 @@ function HomePage() {
   const { selectedCategory, searchTerm } = useContext(RecipeContext);
   const [recipes, setRecipes] = useState([]);
 
-  console.log("[Homepage] selectedCategory:", selectedCategory);
+  //   console.log("[Homepage] selectedCategory:", selectedCategory);
 
   useEffect(() => {
     const fetchRecipes = async () => {

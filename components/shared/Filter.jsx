@@ -62,11 +62,13 @@
 
 "use client";
 import React, { useState, useContext } from "react";
+import { useRouter } from "next/navigation";
 import { Filters } from "@/constants/filters";
 import Button from "@/components/shared/Button";
 import { RecipeContext } from "@/context/RecipeContext";
 
 const Filter = () => {
+  const router = useRouter();
   const { setSelectedCategory } = useContext(RecipeContext);
   const [activeButton, setActiveButton] = useState(Filters[0].value);
 
@@ -74,7 +76,7 @@ const Filter = () => {
     setActiveButton(value);
     setSelectedCategory(value);
 
-    console.log(value);
+    router.push("/");
   };
 
   return (
