@@ -39,12 +39,13 @@ const Layout = ({ children }) => {
               separator={
                 <span className="text-[12px] font-light"> {">"} </span>
               }
-              activeClasses="text-[12px] font-semibold text-neutal-500"
+              activeClasses="text-[12px] font-medium text-neutal-100"
               containerClasses="flex gap-1 items-center"
               listClasses="hover:underline text-[12px] font-light text-neutal-100"
               capitalizeLinks
             />
           </div>
+
           <section className=" pb-56 sm:pb-44">
             <div className="">{children}</div>
           </section>

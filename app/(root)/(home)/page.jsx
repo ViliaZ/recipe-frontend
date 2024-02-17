@@ -3,6 +3,7 @@ import CardRecipe from "@/components/Card";
 import React, { useContext, useEffect, useState } from "react";
 import { getAllRecipes } from "@/lib/actions/recipe.action";
 import { RecipeContext } from "@/context/RecipeContext";
+import AddRecipe from "@/components/shared/AddRecipe";
 
 function HomePage() {
   // useContext is a hook that allows you to use context without wrapping a component in a Context.Consumer
@@ -27,13 +28,18 @@ function HomePage() {
   }, [selectedCategory, searchTerm]); // This effect will run every time selectedCategory or searchTerm changes
 
   return (
-    <div className="mt-10 flex justify-center">
-      <div className="xs:grid-cols-2 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
-        {recipes.map((recipe) => (
-          <CardRecipe key={recipe.id} recipe={recipe} />
-        ))}
+    <>
+      <div className="mx-6 mt-6 flex items-center justify-center">
+        <AddRecipe />
       </div>
-    </div>
+      <div className="mt-10 flex justify-center">
+        <div className="xs:grid-cols-2 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {recipes.map((recipe) => (
+            <CardRecipe key={recipe.id} recipe={recipe} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
 
