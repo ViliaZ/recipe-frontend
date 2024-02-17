@@ -45,8 +45,8 @@ export default function RecipeForm() {
       steps: formData.steps.split("\n"),
       imageUrl: "/assets/images/07_Placeholder.jpg",
       cookingTime: parseInt(formData.cookingTime),
-      category: formData.category,
-      region: formData.region,
+      category: formData.category.toLowerCase(),
+      region: formData.region.toLowerCase(),
       userId: 1,
       ingredients: formData.ingredients.map((ingredient) => ({
         name: ingredient.name,
@@ -152,7 +152,7 @@ export default function RecipeForm() {
                 <input
                   id={`name-${index}`}
                   name={`name-${index}`}
-                  placeholder="Bananas"
+                  placeholder="Name"
                   className="w-full rounded-md border border-neutral-300 px-4 py-2 text-sm shadow-sm transition duration-300 ease-in-out placeholder:text-neutral-500 focus:border-neutral-400 focus:outline-none"
                 ></input>
               </div>

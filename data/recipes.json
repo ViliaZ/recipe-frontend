@@ -289,6 +289,31 @@
           "amount": 100
         }
       ]
+    },
+    {
+      "id": 7,
+      "name": "ömlasömöfmfömgf",
+      "description": "ölmsdvkmklmb",
+      "steps": [
+        {
+          "text": "1. jdfjog"
+        },
+        {
+          "text": "2. sgoooj"
+        }
+      ],
+      "imageUrl": "/assets/images/07_Placeholder.jpg",
+      "cookingTime": 20,
+      "category": "pasta",
+      "region": "italian",
+      "userId": 1,
+      "ingredients": [
+        {
+          "name": "kjndjfjg",
+          "unit": "gr",
+          "amount": 30
+        }
+      ]
     }
   ]
 }
