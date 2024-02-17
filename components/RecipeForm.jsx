@@ -1,8 +1,10 @@
 "use client";
 import { createRecipe } from "@/lib/actions/recipe.action";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function RecipeForm() {
+  const router = useRouter();
   const [ingredientAmount, setIngredientAmount] = useState(1);
 
   const submitRecipe = (event) => {
@@ -28,6 +30,9 @@ export default function RecipeForm() {
 
     saveData(recipeData);
     event.target.reset();
+
+    // Redirect to the home page:
+    router.push("/");
   };
 
   // Create a new recipe and send it to the server
@@ -52,14 +57,6 @@ export default function RecipeForm() {
 
     // Send the new recipe to action:
     await createRecipe(newRecipe);
-    // const response = await createRecipe(newRecipe);
-
-    // if (response.error) {
-    //   // Handle error
-    //   console.error("[Recipe Page] Error creating recipe:", response.error);
-    // } else {
-    //   console.log("[Recipe Page] Recipe created:", response);
-    // }
   };
 
   return (

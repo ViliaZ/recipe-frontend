@@ -1,0 +1,25 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "kjnajknqkjknflqkefnäqölöm",
+      "description": "lkn#knrgläkwnGKNKNV#.,CMVLKM#poj#eopjg#\nkmslgmslgmnlkhnlknhknhenrh",
+      "steps": [
+        "1. pojpsjg",
+        "2. lknlknsnkgk"
+      ],
+      "imageUrl": "/assets/images/07_Placeholder.jpg",
+      "cookingTime": 30,
+      "category": "pasta",
+      "region": "llmkalfk",
+      "userId": 1,
+      "ingredients": [
+        {
+          "name": "kn<dfbfknod",
+          "unit": "gr",
+          "amount": 123
+        }
+      ]
+    }
+  ]
+}
