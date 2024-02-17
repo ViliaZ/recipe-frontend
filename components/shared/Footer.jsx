@@ -4,7 +4,7 @@ import { Link, Image } from "@nextui-org/react";
 
 export default function Footer() {
   return (
-    <footer className=" mt-8 flex flex-col items-center justify-center gap-4  py-10 sm:flex-row sm:justify-between">
+    <footer className=" absolute inset-x-0 bottom-0 z-40 flex w-full flex-col items-center justify-center gap-4 bg-white py-10 sm:fixed sm:flex-row  sm:justify-between md:px-4 ">
       <div>
         <span style={{ color: "black" }} className="text-sm">
           ©2024 HappyFood

@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
         setSearchTerm,
       }}
     >
-      <main className="roboto mx-auto max-w-screen-2xl">
+      <main className="roboto relative mx-auto max-w-screen-2xl">
         <Navbar />
         <div className="mx-auto max-w-screen-lg md:px-6 lg:px-8">
           <div className="my-4 flex justify-center ">
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
               capitalizeLinks
             />
           </div>
-          <section className="">
+          <section className=" pb-56 sm:pb-44">
             <div className="">{children}</div>
           </section>
           <Footer />
