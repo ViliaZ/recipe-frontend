@@ -100,7 +100,7 @@ export default function Search() {
         setInputValue("");
         console.log("input cleared");
       }}
-      className="w-full 320:mx-2 375:mx-4 425:mx-4 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4"
+      className="w-full text-black 320:mx-2 375:mx-4 425:mx-4 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4"
     />
   );
 }
