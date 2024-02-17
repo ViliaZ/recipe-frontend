@@ -189,6 +189,7 @@ export default function RecipeForm() {
           );
         })}
         <button
+          type="button"
           className="mb-3 mr-4 mt-1 w-full cursor-pointer rounded-md border border-transparent bg-gray-600 px-3 py-1 text-base font-medium text-white hover:bg-gray-700 sm:w-auto"
           onClick={() => setIngredientAmount((amount) => amount + 1)}
         >

@@ -292,26 +292,34 @@
     },
     {
       "id": 7,
-      "name": "ömlasömöfmfömgf",
-      "description": "ölmsdvkmklmb",
+      "name": "ölmsbölmöföblmlf",
+      "description": "äös,fbäös,mffäb,äLFm,bÄLS,bÄL;bÖÄF",
       "steps": [
         {
-          "text": "1. jdfjog"
+          "text": "1. plkpjgg"
         },
         {
-          "text": "2. sgoooj"
+          "text": "2. lkmölkmnsr"
+        },
+        {
+          "text": "3. löknklnsl"
         }
       ],
       "imageUrl": "/assets/images/07_Placeholder.jpg",
-      "cookingTime": 20,
+      "cookingTime": 31,
       "category": "pasta",
-      "region": "italian",
+      "region": "lknsdlökmg",
       "userId": 1,
       "ingredients": [
         {
-          "name": "kjndjfjg",
+          "name": "öklmsdökm",
           "unit": "gr",
-          "amount": 30
+          "amount": 12
+        },
+        {
+          "name": "ölmsölm",
+          "unit": "l",
+          "amount": 2
         }
       ]
     }
