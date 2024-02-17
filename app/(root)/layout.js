@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
           <section className=" pb-56 sm:pb-44">
             <div className="">{children}</div>
           </section>
-          <Footer />
+          <Footer lassName="mx-auto max-w-screen-lg md:px-6 lg:px-8" />
         </div>
       </main>
     </RecipeContext.Provider>
