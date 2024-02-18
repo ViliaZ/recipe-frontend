@@ -1,11 +1,13 @@
 "use client";
 import { createRecipe } from "@/lib/actions/recipe.action";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
+import { RecipeContext } from "@/context/RecipeContext";
 
 export default function RecipeForm() {
   const router = useRouter();
   const [ingredientAmount, setIngredientAmount] = useState(1);
+  const { recipes, setRecipes } = useContext(RecipeContext);
 
   const submitRecipe = (event) => {
     event.preventDefault();
@@ -56,7 +58,10 @@ export default function RecipeForm() {
     };
 
     // Send the new recipe to action:
-    await createRecipe(newRecipe);
+    const createdRecipe = await createRecipe(newRecipe);
+
+    // Update the recipes state with the new recipe
+    setRecipes([...recipes, createdRecipe]);
   };
 
   return (
