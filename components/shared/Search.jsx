@@ -1,8 +1,9 @@
 // Customized Input component
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { extendVariants, Input } from "@nextui-org/react";
 import SearchIcon from "../../public/assets/icons/suche.svg";
+import { RecipeContext } from "@/context/RecipeContext";
 import Image from "next/image";
 
 const MyInput = extendVariants(Input, {
@@ -77,6 +78,14 @@ const MyInput = extendVariants(Input, {
 
 export default function Search() {
   const [inputValue, setInputValue] = useState("");
+  // const { setSelectedCategory } = useContext(RecipeContext);
+  const { setSearchTerm } = useContext(RecipeContext);
+
+  const handleSearch = (value) => {
+    setInputValue(value);
+    setSearchTerm(value);
+    console.log("input", value);
+  };
 
   return (
     <MyInput
@@ -95,7 +104,7 @@ export default function Search() {
         />
       }
       value={inputValue}
-      onChange={(e) => setInputValue(e.target.value)}
+      onChange={(e) => handleSearch(e.target.value)}
       onClear={() => {
         setInputValue("");
         console.log("input cleared");
