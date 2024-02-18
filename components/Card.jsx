@@ -1,14 +1,26 @@
 "use client";
 
-import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
+import { deleteRecipe } from "@/lib/actions/recipe.action";
+
+import { useContext } from "react";
+import { RecipeContext } from "../context/RecipeContext.js";
 
 export default function CardRecipe({ recipe }) {
+  const { setRecipes } = useContext(RecipeContext);
+
+  const deleteRecipeHandler = async (id) => {
+    const updatedRecipes = await deleteRecipe(id);
+
+    // Update the state with the new list of recipes
+    setRecipes(updatedRecipes);
+  };
+
   return (
-    <Link href={"/recipe/" + recipe.id}>
-      <Card shadow="sm" className="max-w-[280px] rounded-b-none">
+    <Card shadow="sm" className="max-w-[280px] rounded-b-none">
+      <Link href={"/recipe/" + recipe.id}>
         <CardHeader className="flex p-0">
           <div
             style={{ width: "300px", height: "144px", position: "relative" }}
@@ -43,35 +55,36 @@ export default function CardRecipe({ recipe }) {
             {recipe.cookingTime} min
           </div>
         </CardBody>
-        <CardBody className="my-3 flex flex-row justify-between">
-          <div className="flex min-w-14 items-center justify-around rounded-full border-1 border-solid border-neutral-600 p-0.5">
-            <Image
-              src="/assets/icons/herz.svg"
-              alt="Herz"
-              width={12}
-              height={12}
-              className=""
-            />
+      </Link>
+      <CardBody className="my-3 flex flex-row justify-between">
+        <div className="flex min-w-14 items-center justify-around rounded-full border-1 border-solid border-neutral-600 p-0.5">
+          <Image
+            src="/assets/icons/herz.svg"
+            alt="Herz"
+            width={12}
+            height={12}
+            className=""
+          />
 
-            <div className="text-[12px] font-medium">12</div>
-          </div>
-          <div className="flex gap-4">
-            <Image
-              src="/assets/icons/bleistift.svg"
-              alt="Bleistift"
-              width={16}
-              height={16}
-            />
-            <Image
-              src="/assets/icons/kreuzkreis.svg"
-              alt="Kreuz im Kreis"
-              width={16}
-              height={16}
-              className="justify-end"
-            />
-          </div>
-        </CardBody>
-      </Card>
-    </Link>
+          <div className="text-[12px] font-medium">12</div>
+        </div>
+        <div className="flex gap-4">
+          <Image
+            src="/assets/icons/bleistift.svg"
+            alt="Bleistift"
+            width={16}
+            height={16}
+          />
+          <Image
+            src="/assets/icons/kreuzkreis.svg"
+            alt="Kreuz im Kreis"
+            width={16}
+            height={16}
+            onClick={() => deleteRecipeHandler(recipe.id)}
+            className="cursor-pointer justify-end"
+          />
+        </div>
+      </CardBody>
+    </Card>
   );
 }

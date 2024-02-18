@@ -1,18 +1,15 @@
 "use client";
 import CardRecipe from "@/components/Card";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { getAllRecipes } from "@/lib/actions/recipe.action";
 import { RecipeContext } from "@/context/RecipeContext";
 import AddRecipe from "@/components/shared/AddRecipe";
 
 function HomePage() {
   // useContext is a hook that allows you to use context without wrapping a component in a Context.Consumer
-  // Here, we're getting the selectedCategory and searchTerm from the RecipeContext
-  const { selectedCategory, searchTerm } = useContext(RecipeContext);
-
-  // useState is a hook that lets you add React state to function components
-  // Here we're creating a state variable called recipes. setRecipes is the function to update the state.
-  const [recipes, setRecipes] = useState([]);
+  // Here, we're getting the selectedCategory, searchTerm, and recipes from the RecipeContext
+  const { selectedCategory, searchTerm, recipes, setRecipes } =
+    useContext(RecipeContext);
 
   useEffect(() => {
     // useEffect is a hook that allows you to perform side effects in function components

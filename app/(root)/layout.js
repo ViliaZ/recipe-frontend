@@ -10,6 +10,8 @@ import Breadcrumb from "@/components/shared/Breadcrumbs";
 const Layout = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [recipes, setRecipes] = useState([]);
+
   return (
     <RecipeContext.Provider
       value={{
@@ -17,6 +19,8 @@ const Layout = ({ children }) => {
         setSelectedCategory,
         searchTerm,
         setSearchTerm,
+        recipes,
+        setRecipes,
       }}
     >
       <main className="roboto relative mx-auto max-w-screen-2xl">

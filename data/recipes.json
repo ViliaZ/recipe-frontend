@@ -289,39 +289,6 @@
           "amount": 100
         }
       ]
-    },
-    {
-      "id": 7,
-      "name": "ölmsbölmöföblmlf",
-      "description": "äös,fbäös,mffäb,äLFm,bÄLS,bÄL;bÖÄF",
-      "steps": [
-        {
-          "text": "1. plkpjgg"
-        },
-        {
-          "text": "2. lkmölkmnsr"
-        },
-        {
-          "text": "3. löknklnsl"
-        }
-      ],
-      "imageUrl": "/assets/images/07_Placeholder.jpg",
-      "cookingTime": 31,
-      "category": "pasta",
-      "region": "lknsdlökmg",
-      "userId": 1,
-      "ingredients": [
-        {
-          "name": "öklmsdökm",
-          "unit": "gr",
-          "amount": 12
-        },
-        {
-          "name": "ölmsölm",
-          "unit": "l",
-          "amount": 2
-        }
-      ]
     }
   ]
 }
