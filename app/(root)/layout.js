@@ -11,6 +11,8 @@ const Layout = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [recipes, setRecipes] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
 
   return (
     <RecipeContext.Provider
@@ -21,6 +23,10 @@ const Layout = ({ children }) => {
         setSearchTerm,
         recipes,
         setRecipes,
+        selectedRecipe,
+        setSelectedRecipe,
+        isEditing,
+        setIsEditing,
       }}
     >
       <main className="roboto relative mx-auto max-w-screen-2xl">

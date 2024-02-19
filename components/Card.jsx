@@ -9,7 +9,16 @@ import { useContext } from "react";
 import { RecipeContext } from "../context/RecipeContext.js";
 
 export default function CardRecipe({ recipe }) {
-  const { setRecipes } = useContext(RecipeContext);
+  const { setRecipes, setSelectedRecipe, setIsEditing } =
+    useContext(RecipeContext);
+
+  const editRecipeHandler = async () => {
+    //
+    setSelectedRecipe(recipe);
+    setIsEditing(true);
+
+    //   const editedRecipes = await editRecipe(id);
+  };
 
   const deleteRecipeHandler = async (id) => {
     const updatedRecipes = await deleteRecipe(id);
@@ -68,13 +77,17 @@ export default function CardRecipe({ recipe }) {
 
           <div className="text-[12px] font-medium">12</div>
         </div>
-        <div className="flex gap-4">
-          <Image
-            src="/assets/icons/bleistift.svg"
-            alt="Bleistift"
-            width={16}
-            height={16}
-          />
+        <div className="flex items-center gap-4">
+          <Link href="/add-recipe">
+            <Image
+              src="/assets/icons/bleistift.svg"
+              alt="Bleistift"
+              width={16}
+              height={16}
+              onClick={() => editRecipeHandler()}
+              className="cursor-pointer justify-end"
+            />
+          </Link>
           <Image
             src="/assets/icons/kreuzkreis.svg"
             alt="Kreuz im Kreis"
