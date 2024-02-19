@@ -292,30 +292,26 @@
     },
     {
       "id": 7,
-      "name": "BBBBBB",
-      "description": "sdfsfsfs",
+      "name": "BBBBBBBBBB",
+      "description": "bbbbbb",
       "steps": [
         {
-          "text": {
-            "text": "[object Object]"
-          }
+          "text": "bbbbbb"
         },
         {
-          "text": {
-            "text": "[object Object]"
-          }
+          "text": "bbbbbbbbb"
         }
       ],
       "imageUrl": "/assets/images/07_Placeholder.jpg",
-      "cookingTime": 34,
-      "category": "sdfsf",
-      "region": "dfsfsf",
+      "cookingTime": 20,
+      "category": "bbbbbbb",
+      "region": "bbbbbbb",
       "userId": 1,
       "ingredients": [
         {
-          "name": "ddf",
+          "name": "bbbb",
           "unit": "",
-          "amount": 34
+          "amount": 20
         }
       ]
     }

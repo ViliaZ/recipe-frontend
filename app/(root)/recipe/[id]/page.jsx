@@ -10,7 +10,8 @@ const Recipe = async ({ params }) => {
 
   const recipe = await getOneRecipe(id);
 
-  //   console.log("[Detail Page] recipe:", recipe);
+  console.log("[Detail Page] recipe:", recipe);
+
   return (
     <div className="w-full flex-col items-center justify-center bg-white 320:px-6 md:px-10 lg:px-14">
       <div className="mx-6 mt-6 flex items-center justify-center">

@@ -239,12 +239,17 @@ export default function RecipeForm() {
 
   useEffect(() => {
     if (isEditing && selectedRecipe) {
+      // Umwandeln der steps vone einem Array mit Objekten in einen Array mit Strings
+      const stepsString = selectedRecipe.steps
+        .map((step) => step.text)
+        .join("\n");
       setForm({
         name: selectedRecipe.name,
         description: selectedRecipe.description,
         category: selectedRecipe.category,
         region: selectedRecipe.region,
-        steps: selectedRecipe.steps.join("\n"),
+        // steps: selectedRecipe.steps.join("\n"),
+        steps: stepsString,
         cookingTime: selectedRecipe.cookingTime,
         ingredients: selectedRecipe.ingredients,
       });
@@ -260,34 +265,6 @@ export default function RecipeForm() {
       });
     }
   }, [selectedRecipe, isEditing]);
-
-  //   const submitRecipe = (event) => {
-  //     event.preventDefault();
-  //     const formData = new FormData(event.target);
-  //     // console.log('[Recipe Form] formData:', Object.fromEntries(formData));
-
-  //     const recipeData = {
-  //       name: formData.get("name"),
-  //       description: formData.get("description"),
-  //       category: formData.get("category"),
-  //       region: formData.get("region"),
-  //       steps: formData.get("steps"),
-  //       cookingTime: formData.get("cookingTime"),
-  //       ingredients: [...Array(ingredientAmount).keys()].map((index) => {
-  //         return {
-  //           name: formData.get(`name-${index}`),
-  //           amount: formData.get(`amount-${index}`),
-  //           units: formData.get(`units-${index}`),
-  //         };
-  //       }),
-  //     };
-
-  //     saveData(recipeData);
-  //     event.target.reset();
-
-  //     // Redirect to the home page:
-  //     router.push("/");
-  //   };
 
   const transformRecipeData = (formData) => {
     const transformedData = {
@@ -355,33 +332,6 @@ export default function RecipeForm() {
     // Redirect to the home page:
     router.push("/");
   };
-
-  // Create a new recipe and send it to the server
-  //   const saveData = async (formData) => {
-  //     // console.log('[Recipe Page] Form data:', formData);
-
-  // const newRecipe = {
-  //   name: formData.name,
-  //   description: formData.description,
-  //   steps: formData.steps.split("\n"),
-  //   imageUrl: "/assets/images/07_Placeholder.jpg",
-  //   cookingTime: parseInt(formData.cookingTime),
-  //   category: formData.category.toLowerCase(),
-  //   region: formData.region.toLowerCase(),
-  //   userId: 1,
-  //   ingredients: formData.ingredients.map((ingredient) => ({
-  //     name: ingredient.name,
-  //     unit: ingredient.units,
-  //     amount: parseFloat(ingredient.amount),
-  //   })),
-  // };
-
-  //     // Send the new recipe to action:
-  //     const createdRecipe = await createRecipe(newRecipe);
-
-  //     // Update the recipes state with the new recipe
-  //     setRecipes([...recipes, createdRecipe]);
-  //   };
 
   return (
     <>
