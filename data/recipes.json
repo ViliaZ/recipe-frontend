@@ -289,31 +289,6 @@
           "amount": 100
         }
       ]
-    },
-    {
-      "id": 7,
-      "name": "BBBBBBBBBB",
-      "description": "bbbbbb",
-      "steps": [
-        {
-          "text": "bbbbbb"
-        },
-        {
-          "text": "bbbbbbbbb"
-        }
-      ],
-      "imageUrl": "/assets/images/07_Placeholder.jpg",
-      "cookingTime": 20,
-      "category": "bbbbbbb",
-      "region": "bbbbbbb",
-      "userId": 1,
-      "ingredients": [
-        {
-          "name": "bbbb",
-          "unit": "",
-          "amount": 20
-        }
-      ]
     }
   ]
 }

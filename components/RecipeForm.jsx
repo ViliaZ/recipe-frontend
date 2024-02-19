@@ -221,7 +221,7 @@ export default function RecipeForm() {
   const router = useRouter();
   const [ingredientAmount, setIngredientAmount] = useState(1);
   // State from the RecipeContext
-  const { recipes, setRecipes, selectedRecipe, isEditing } =
+  const { recipes, setRecipes, selectedRecipe, isEditing, setIsEditing } =
     useContext(RecipeContext);
 
   console.log("[RecipeForm] selectedRecipe:", selectedRecipe);
@@ -234,23 +234,31 @@ export default function RecipeForm() {
     region: "",
     steps: "",
     cookingTime: "",
-    ingredients: [{ name: "", amount: "", units: "" }],
+    ingredients: [{ name: "", amount: 0, unit: "" }],
   });
 
   useEffect(() => {
     if (isEditing && selectedRecipe) {
-      // Umwandeln der steps vone einem Array mit Objekten in einen Array mit Strings
+      // Change the steps array from an array with objects to an array with strings:
       const stepsString = selectedRecipe.steps
         .map((step) => step.text)
         .join("\n");
+
+      // Umwandeln der ingredients, um sicherzustellen, dass sie das richtige Format haben
+      //   const ingredientsArray = selectedRecipe.ingredients.map((ingredient) => ({
+      //     name: ingredient.name,
+      //     amount: ingredient.amount,
+      //     units: ingredient.unit, // Stellen Sie sicher, dass Sie den richtigen Schlüsselnamen verwenden
+      //   }));
+
       setForm({
         name: selectedRecipe.name,
         description: selectedRecipe.description,
         category: selectedRecipe.category,
         region: selectedRecipe.region,
-        // steps: selectedRecipe.steps.join("\n"),
         steps: stepsString,
         cookingTime: selectedRecipe.cookingTime,
+        // ingredients: ingredientsArray,
         ingredients: selectedRecipe.ingredients,
       });
     } else {
@@ -261,7 +269,7 @@ export default function RecipeForm() {
         region: "",
         steps: "",
         cookingTime: "",
-        ingredients: [{ name: "", amount: "", units: "" }],
+        ingredients: [{ name: "", amount: "", unit: "" }],
       });
     }
   }, [selectedRecipe, isEditing]);
@@ -278,7 +286,7 @@ export default function RecipeForm() {
       userId: 1,
       ingredients: formData.ingredients.map((ingredient) => ({
         name: ingredient.name,
-        unit: ingredient.units,
+        unit: ingredient.unit,
         amount: parseFloat(ingredient.amount),
       })),
     };
@@ -300,12 +308,10 @@ export default function RecipeForm() {
         return {
           name: formData.get(`name-${index}`),
           amount: formData.get(`amount-${index}`),
-          units: formData.get(`units-${index}`),
+          unit: formData.get(`unit-${index}`),
         };
       }),
     };
-
-    console.log(recipeData.steps); // Fügen Sie diese Zeile hinzu, um den Wert von steps zu sehen
 
     const transformedData = transformRecipeData(recipeData);
 
@@ -321,14 +327,25 @@ export default function RecipeForm() {
           recipe.id === updatedRecipe.id ? updatedRecipe : recipe
         )
       );
+
+      // Reset isEditing:
+      setIsEditing(false);
+
+      // Reset the form:
+      event.target.reset();
     } else {
       // Erstellen eines neuen Rezepts
       const newRecipe = await createRecipe(transformedData);
       // Aktualisieren des recipes Zustands mit dem neuen Rezept
       setRecipes([...recipes, newRecipe]);
+
+      // Reset the form:
+      event.target.reset();
     }
 
-    event.target.reset();
+    // Reset the form:
+    // event.target.reset();
+
     // Redirect to the home page:
     router.push("/");
   };
@@ -487,21 +504,21 @@ export default function RecipeForm() {
               </div>
               <div className="flex flex-col gap-2">
                 <label
-                  htmlFor={`units-${index}`}
+                  htmlFor={`unit-${index}`}
                   className="self-start text-sm  text-neutral-600"
                 >
                   Ingredient Units:
                 </label>
                 <input
-                  id={`units-${index}`}
-                  name={`units-${index}`}
-                  value={form.ingredients[index]?.units}
+                  id={`unit-${index}`}
+                  name={`unit-${index}`}
+                  value={form.ingredients[index]?.unit}
                   onChange={(e) =>
                     setForm({
                       ...form,
                       ingredients: form.ingredients.map((ingredient, i) =>
                         i === index
-                          ? { ...ingredient, units: e.target.value }
+                          ? { ...ingredient, unit: e.target.value }
                           : ingredient
                       ),
                     })
@@ -532,7 +549,7 @@ export default function RecipeForm() {
             type="submit"
             className="mt-1 w-full cursor-pointer rounded-md border border-transparent bg-[#038924] px-3 py-1 text-base font-medium text-white hover:bg-[#026e1d] sm:w-auto"
           >
-            Add Recipe
+            Save Recipe
           </button>
         )}
       </form>

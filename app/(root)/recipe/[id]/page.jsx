@@ -5,12 +5,9 @@ import { getOneRecipe } from "@/lib/actions/recipe.action";
 import AddRecipe from "@/components/shared/AddRecipe";
 
 const Recipe = async ({ params }) => {
-  // console.log('[Detail  Page] params: ', params);
   const id = params.id;
 
   const recipe = await getOneRecipe(id);
-
-  console.log("[Detail Page] recipe:", recipe);
 
   return (
     <div className="w-full flex-col items-center justify-center bg-white 320:px-6 md:px-10 lg:px-14">
