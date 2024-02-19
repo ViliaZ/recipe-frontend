@@ -10,6 +10,7 @@ import Breadcrumb from "@/components/shared/Breadcrumbs";
 const Layout = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <RecipeContext.Provider
       value={{
