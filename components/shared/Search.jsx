@@ -84,7 +84,6 @@ export default function Search() {
   const handleSearch = (value) => {
     setInputValue(value);
     setSearchTerm(value);
-    console.log("input", value);
   };
 
   return (
@@ -107,6 +106,7 @@ export default function Search() {
       onChange={(e) => handleSearch(e.target.value)}
       onClear={() => {
         setInputValue("");
+        setSearchTerm("");
         console.log("input cleared");
       }}
       className="w-full text-black 320:mx-2 375:mx-4 425:mx-4 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4"
