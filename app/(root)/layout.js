@@ -10,6 +10,9 @@ import Breadcrumb from "@/components/shared/Breadcrumbs";
 const Layout = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [recipes, setRecipes] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
 
   return (
     <RecipeContext.Provider
@@ -18,6 +21,12 @@ const Layout = ({ children }) => {
         setSelectedCategory,
         searchTerm,
         setSearchTerm,
+        recipes,
+        setRecipes,
+        selectedRecipe,
+        setSelectedRecipe,
+        isEditing,
+        setIsEditing,
       }}
     >
       <main className="roboto relative mx-auto max-w-screen-2xl">
@@ -40,12 +49,13 @@ const Layout = ({ children }) => {
               separator={
                 <span className="text-[12px] font-light"> {">"} </span>
               }
-              activeClasses="text-[12px] font-semibold text-neutal-500"
+              activeClasses="text-[12px] font-medium text-neutal-100"
               containerClasses="flex gap-1 items-center"
               listClasses="hover:underline text-[12px] font-light text-neutal-100"
               capitalizeLinks
             />
           </div>
+
           <section className=" pb-56 sm:pb-44">
             <div className="">{children}</div>
           </section>

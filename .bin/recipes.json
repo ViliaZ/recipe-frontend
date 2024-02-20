@@ -24,17 +24,17 @@
         {
           "name": "Spaghetti",
           "unit": "gr",
-          "amount": 200
+          "amount": 200.0
         },
         {
           "name": "Tomato Sauce",
           "unit": "gr",
-          "amount": 150
+          "amount": 150.0
         },
         {
           "name": "Ground Beef",
           "unit": "gr",
-          "amount": 100
+          "amount": 100.0
         }
       ]
     },
@@ -68,22 +68,22 @@
         {
           "name": "Pizza Dough",
           "unit": "grams",
-          "amount": 300
+          "amount": 300.0
         },
         {
           "name": "Tomato Sauce",
           "unit": "grams",
-          "amount": 200
+          "amount": 200.0
         },
         {
           "name": "Mozzarella",
           "unit": "grams",
-          "amount": 150
+          "amount": 150.0
         },
         {
           "name": "Fresh Basil",
           "unit": "grams",
-          "amount": 10
+          "amount": 10.0
         }
       ]
     },
@@ -111,22 +111,22 @@
         {
           "name": "Chicken Breast",
           "unit": "grams",
-          "amount": 400
+          "amount": 400.0
         },
         {
           "name": "Teriyaki Sauce",
           "unit": "milliliters",
-          "amount": 100
+          "amount": 100.0
         },
         {
           "name": "Cooked Rice",
           "unit": "grams",
-          "amount": 200
+          "amount": 200.0
         },
         {
           "name": "Mixed Vegetables",
           "unit": "grams",
-          "amount": 150
+          "amount": 150.0
         }
       ]
     },
@@ -154,27 +154,27 @@
         {
           "name": "Broccoli",
           "unit": "grams",
-          "amount": 150
+          "amount": 150.0
         },
         {
           "name": "Carrots",
           "unit": "grams",
-          "amount": 100
+          "amount": 100.0
         },
         {
           "name": "Bell Peppers",
           "unit": "grams",
-          "amount": 100
+          "amount": 100.0
         },
         {
           "name": "Soy Sauce",
           "unit": "milliliters",
-          "amount": 50
+          "amount": 50.0
         },
         {
           "name": "Fresh Ginger",
           "unit": "grams",
-          "amount": 10
+          "amount": 10.0
         }
       ]
     },
@@ -205,37 +205,37 @@
         {
           "name": "Quinoa",
           "unit": "grams",
-          "amount": 200
+          "amount": 200.0
         },
         {
           "name": "Cherry Tomatoes",
           "unit": "grams",
-          "amount": 150
+          "amount": 150.0
         },
         {
           "name": "Cucumber",
           "unit": "grams",
-          "amount": 100
+          "amount": 100.0
         },
         {
           "name": "Feta Cheese",
           "unit": "grams",
-          "amount": 50
+          "amount": 50.0
         },
         {
           "name": "Fresh Basil",
           "unit": "grams",
-          "amount": 10
+          "amount": 10.0
         },
         {
           "name": "Olive Oil",
           "unit": "milliliters",
-          "amount": 30
+          "amount": 30.0
         },
         {
           "name": "Lemon Juice",
           "unit": "milliliters",
-          "amount": 20
+          "amount": 20.0
         }
       ]
     },
@@ -266,27 +266,27 @@
         {
           "name": "Jumbo Pasta Shells",
           "unit": "pieces",
-          "amount": 200
+          "amount": 200.0
         },
         {
           "name": "Ricotta Cheese",
           "unit": "grams",
-          "amount": 250
+          "amount": 250.0
         },
         {
           "name": "Fresh Spinach",
           "unit": "grams",
-          "amount": 150
+          "amount": 150.0
         },
         {
           "name": "Garlic Powder",
           "unit": "teaspoons",
-          "amount": 2
+          "amount": 2.0
         },
         {
           "name": "Mozzarella Cheese",
           "unit": "grams",
-          "amount": 100
+          "amount": 100.0
         }
       ]
     }
