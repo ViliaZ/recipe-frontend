@@ -3,6 +3,7 @@ import { createRecipe, editRecipe } from "@/lib/actions/recipe.action";
 import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { RecipeContext } from "@/context/RecipeContext";
+import { image } from "@nextui-org/react";
 
 export default function RecipeForm() {
   const router = useRouter();
@@ -11,7 +12,7 @@ export default function RecipeForm() {
   // State from the RecipeContext
   const { recipes, setRecipes, selectedRecipe, isEditing, setIsEditing } =
     useContext(RecipeContext);
-
+  console.log(selectedRecipe);
   // Local state to prepopulate the form
   const [form, setForm] = useState({
     name: "",
@@ -29,6 +30,8 @@ export default function RecipeForm() {
       const stepsString = selectedRecipe.steps
         .map((step) => step.text)
         .join("\n");
+
+      setIngredientAmount(selectedRecipe.ingredients.length);
 
       setForm({
         name: selectedRecipe.name,
@@ -53,11 +56,22 @@ export default function RecipeForm() {
   }, [selectedRecipe, isEditing]);
 
   const transformRecipeData = (formData) => {
+    let image;
+    if (
+      formData.imageUrl === "" ||
+      formData.imageUrl === "/assets/images/07_Placeholder.jpg" ||
+      formData.imageUrl === undefined
+    ) {
+      image = "/assets/images/07_Placeholder.jpg";
+    } else {
+      image = formData.imageUrl;
+    }
+    console.log(image);
     const transformedData = {
       name: formData.name,
       description: formData.description,
       steps: formData.steps.split("\n").map((step) => ({ text: step })),
-      imageUrl: "/assets/images/07_Placeholder.jpg",
+      imageUrl: image,
       cookingTime: parseInt(formData.cookingTime),
       category: formData.category.toLowerCase(),
       region: formData.region.toLowerCase(),
@@ -99,6 +113,7 @@ export default function RecipeForm() {
         selectedRecipe.id,
         transformedData
       );
+
       // Setting updated recipe in state recipes array
       setRecipes(
         recipes.map((recipe) =>
@@ -112,7 +127,7 @@ export default function RecipeForm() {
       // Reset the form:
       event.target.reset();
     } else {
-      // Creating new rcipe
+      // Creating new recipe
       const newRecipe = await createRecipe(transformedData);
 
       // Setting new recipe in state recipes array

@@ -16,5 +16,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.ignoreWords": ["Kreis", "Kreuz", "herz", "kreuzkreis", "nextui"],
-  "cSpell.words": ["bleistift"]
+  "cSpell.words": ["bleistift", "dente", "melty", "prepopulate"]
 }
