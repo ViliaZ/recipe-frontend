@@ -8,7 +8,7 @@ import { RecipeContext } from "@/context/RecipeContext";
 const Filter = () => {
   const router = useRouter();
   const { setSelectedCategory } = useContext(RecipeContext);
-  const [activeButton, setActiveButton] = useState(Filters[0].value);
+  const [activeButton, setActiveButton] = useState(Filters[0].value); // Set the default active button to "all"
 
   const handleClick = (value) => {
     setActiveButton(value);

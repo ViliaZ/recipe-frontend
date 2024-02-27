@@ -3,7 +3,6 @@ import { createRecipe, editRecipe } from "@/lib/actions/recipe.action";
 import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { RecipeContext } from "@/context/RecipeContext";
-import { image } from "@nextui-org/react";
 
 export default function RecipeForm() {
   const router = useRouter();
@@ -12,7 +11,7 @@ export default function RecipeForm() {
   // State from the RecipeContext
   const { recipes, setRecipes, selectedRecipe, isEditing, setIsEditing } =
     useContext(RecipeContext);
-  console.log(selectedRecipe);
+
   // Local state to prepopulate the form
   const [form, setForm] = useState({
     name: "",
@@ -56,22 +55,11 @@ export default function RecipeForm() {
   }, [selectedRecipe, isEditing]);
 
   const transformRecipeData = (formData) => {
-    let image;
-    if (
-      formData.imageUrl === "" ||
-      formData.imageUrl === "/assets/images/07_Placeholder.jpg" ||
-      formData.imageUrl === undefined
-    ) {
-      image = "/assets/images/07_Placeholder.jpg";
-    } else {
-      image = formData.imageUrl;
-    }
-    console.log(image);
     const transformedData = {
       name: formData.name,
       description: formData.description,
       steps: formData.steps.split("\n").map((step) => ({ text: step })),
-      imageUrl: image,
+      imageUrl: "/assets/images/07_Placeholder.jpg",
       cookingTime: parseInt(formData.cookingTime),
       category: formData.category.toLowerCase(),
       region: formData.region.toLowerCase(),
@@ -138,7 +126,7 @@ export default function RecipeForm() {
     }
 
     // Redirect to the home page:
-    router.push("/");
+    router.push("/"); // The redirect will cause the homepage to re-render with the new recipe
   };
 
   return (

@@ -28,7 +28,7 @@ const Breadcrumb = ({
           const itemClasses = isLast ? `${activeClasses}` : listClasses;
           const itemLink = capitalizeLinks
             ? link[0].toUpperCase() + link.slice(1, link.length)
-            : link;
+            : link; // Capitalize first letter of each link
           return (
             <React.Fragment key={index}>
               <li className={itemClasses}>

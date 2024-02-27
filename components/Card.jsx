@@ -1,11 +1,10 @@
 "use client";
 
-import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
+import { useContext } from "react";
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 import { deleteRecipe } from "@/lib/actions/recipe.action";
-
-import { useContext } from "react";
 import { RecipeContext } from "../context/RecipeContext.js";
 
 export default function CardRecipe({ recipe }) {
@@ -13,11 +12,8 @@ export default function CardRecipe({ recipe }) {
     useContext(RecipeContext);
 
   const editRecipeHandler = async () => {
-    //
     setSelectedRecipe(recipe);
     setIsEditing(true);
-
-    //   const editedRecipes = await editRecipe(id);
   };
 
   const deleteRecipeHandler = async (id) => {
@@ -72,7 +68,6 @@ export default function CardRecipe({ recipe }) {
             alt="Herz"
             width={12}
             height={12}
-            className=""
           />
 
           <div className="text-[12px] font-medium">12</div>

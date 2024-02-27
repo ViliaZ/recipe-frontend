@@ -78,12 +78,11 @@ const MyInput = extendVariants(Input, {
 
 export default function Search() {
   const [inputValue, setInputValue] = useState("");
-  // const { setSelectedCategory } = useContext(RecipeContext);
   const { setSearchTerm } = useContext(RecipeContext);
 
   const handleSearch = (value) => {
-    setInputValue(value);
-    setSearchTerm(value);
+    setInputValue(value); // Local state for input value
+    setSearchTerm(value); // Global state for search term
   };
 
   return (
